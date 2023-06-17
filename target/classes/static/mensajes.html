@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="/Reto-2/mensajes.js"></script>
+    <script src="/Reto-2/funcionesGenerales.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Mensajes</title>
+</head>
+<body onload="traerDatosMensajes()">
+<h1>Mensajes</h1>
+<div>
+ <table id="tabla">
+
+ </table>
+  </div>
+
+  <h3>Agregar Mensajes</h3>
+  <div>
+    <input type="number" name="" id="id" placeholder="Id del mensaje"><br><br>
+    <textarea type="text" id="messagetext" placeholder="Mensaje" rows="4" cols="50"></textarea> <br><br>
+
+  </div>
+
+  <button onclick="guardarMensaje()">Guardar</button>
+
+
+  <button onclick="location.href='index.html'">Volver</button>
+  
+</body>
+</html>
