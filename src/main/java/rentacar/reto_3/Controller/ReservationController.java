@@ -49,9 +49,10 @@ public class ReservationController {
 
     //reto 5
     @GetMapping("/report-dates/{fecha1}/{fecha2}")
-    public List<Reservation> getReservationBetweenDatesReport(@PathVariable("fecha1") String fecha1, @PathVariable("fecha2") String fecha2)
+    public List<Reservation> getReservationBetweenDatesReport(@PathVariable("fecha1") String fecha1, @PathVariable("fecha2")
+    String fecha2)
     {
-        return reservationService.getReservationBetweenDatesReport(fecha1,fecha1);
+        return reservationService.getReservationBetweenDatesReport(fecha1,fecha2);
     }
     @GetMapping("/report-status")
     public CompletedAndCancelled getReservationsStatusReport(){
