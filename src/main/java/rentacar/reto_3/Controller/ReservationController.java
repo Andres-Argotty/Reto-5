@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
+import rentacar.reto_3.Model.DTOs.CompletedAndCancelled;
+import rentacar.reto_3.Model.DTOs.TotalAndClient;
 import rentacar.reto_3.Model.Reservation;
 import rentacar.reto_3.Service.ReservationService;
 
@@ -44,5 +46,20 @@ public class ReservationController {
     public boolean deleteReservation (@PathVariable int id){
         return reservationService.deleteReservation(id);
     }
+
+    //reto 5
+    @GetMapping("/report-dates/{fecha1}/{fecha2}")
+    public List<Reservation> getReservationBetweenDatesReport(@PathVariable("fecha1") String fecha1, @PathVariable("fecha2") String fecha2)
+    {
+        return reservationService.getReservationBetweenDatesReport(fecha1,fecha1);
+    }
+    @GetMapping("/report-status")
+    public CompletedAndCancelled getReservationsStatusReport(){
+        return reservationService.getReservationStatusReport();
+    }
+    @GetMapping("/report-clients")
+    public List<TotalAndClient> getTopClientsReport(){
+        return  reservationService.getTopClientsReport();
+    }
+
 }
-//Debemos realizar los reportes
