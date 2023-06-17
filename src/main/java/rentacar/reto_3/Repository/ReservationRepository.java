@@ -32,22 +32,14 @@ public void delete(Reservation reservation){
 
 //Reto 5 Métodos
 
-public List<Reservation> GetReservationsBetweenDates(Date Fecha_Inicio, Date Fecha_Final){
+public List<Reservation> getReservationsBetweenDates(Date Fecha_Inicio, Date Fecha_Final){
     return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(Fecha_Inicio,Fecha_Final);}
 
-public List<Reservation> GetReservationByStatus(String status){
+public List<Reservation> getReservationByStatus(String status){
     return reservationCrudRepository.findAllByStatus(status);}
 
-public List<TotalAndClient> GetTopClients (){
-    //Objeto de Transferencia de Datos DTO, su única función es transferir datos
-    List<TotalAndClient> respuesta = new ArrayList<>();
-    List<Object[]> reporte= reservationCrudRepository.GetTotalReservationByClient();
-    //Realizamos un for para recorrer el reporte e insertar en respuesta
-    for (Object[] pareja :
-            reporte) {
-        respuesta.add(new TotalAndClient ((Long) pareja[1], (Client) pareja[0])); //Casteamos
-    }
-    return respuesta;
+public List<Object[]> getTotalReservationsByClient (){
+   return reservationCrudRepository.getTotalReservationByClient();
 
 }
 }

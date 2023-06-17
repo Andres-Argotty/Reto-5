@@ -29,7 +29,7 @@ public interface ReservationCrudRepository extends CrudRepository<Reservation, I
     //[Client2, total_cliente2]
     //etc...
     @Query("SELECT c.client, COUNT (c.client) FROM Reservation AS c GROUP BY c.client ORDER BY COUNT (c.client) DESC")
-    public List<Object[]> GetTotalReservationByClient(); //Este método ejecuta la sentencia de arriba
+    public List<Object[]> getTotalReservationByClient(); //Este método ejecuta la sentencia de arriba
     //Usamos el tipo Object para no especificar los tipos de datos y esto se representa en un arreglo de objetos.
 
 }
