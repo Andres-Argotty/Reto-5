@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import rentacar.reto_3.Model.Reservation;
 import rentacar.reto_3.Repository.CRUD.ReservationCrudRepository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +27,18 @@ public void delete(Reservation reservation){
     reservationCrudRepository.delete(reservation);
 }
 
+//Reto 5 Métodos
+
+public List<Reservation> GetReservationsBetweenDates(Date Fecha_Inicio, Date Fecha_Final){
+    return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(Fecha_Inicio,Fecha_Final);}
+
+public List<Reservation> GetReservationByStatus(String status){
+    return reservationCrudRepository.findAllByStatus(status);}
+
+public void GetTopClients (){
+    //Objeto de Transferencia de Datos DTO, su única función es transferir datos
 
 
+
+}
 }
